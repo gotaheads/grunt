@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Growth of Licences in Gippsland</title>
+    <script src="http://d3js.org/d3.v2.min.js" charset="utf-8"></script>
+
+    <script src="xcharts/xcharts.js"></script>
+    <link rel="stylesheet" href="xcharts/xcharts.css">
+</head>
+<body>
+
+
+<figure style="width: 400px; height: 300px;" id="myChart"></figure>
+
+<script>
+
+
+    var data = {
+        "xScale": "time",
+        "yScale": "linear",
+        "type": "line",
+        "main": [
+            {
+                "className": ".pizza",
+                "data": [
+                    {
+                        "x": "2004-1-1",
+                        "y": 157400.4
+                    },
+                    {
+                        "x": "2005-1-1",
+                        "y": 158750.1
+                    }
+                ]
+            }
+        ]
+    };
+    var opts = {
+        "dataFormatX": function (x) { return d3.time.format('%Y-%m-%d').parse(x); },
+        "tickFormatX": function (x) { return d3.time.format('%Y')(x); }
+    };
+
+    var myChart = new xChart('line', data, '#myChart', opts);
+
+</script>
+
+</body>
+</html>

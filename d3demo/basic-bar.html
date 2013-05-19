@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>A Basic xChart</title>
+    <script src="http://d3js.org/d3.v2.min.js" charset="utf-8"></script>
+
+    <script src="xcharts/xcharts.js"></script>
+    <link rel="stylesheet" href="xcharts/xcharts.css">
+</head>
+<body>
+
+
+<figure style="width: 400px; height: 300px;" id="myChart"></figure>
+
+<script>
+    var data = {
+        "xScale": "ordinal",
+        "yScale": "linear",
+        "main": [
+            {
+                "className": ".pizza",
+                "data": [
+                    {
+                        "x": "Pepperoni",
+                        "y": 4
+                    },
+                    {
+                        "x": "Cheese",
+                        "y": 8
+                    }
+                ]
+            }
+        ]
+    };
+    var myChart = new xChart('bar', data, '#myChart');
+</script>
+
+</body>
+</html>
